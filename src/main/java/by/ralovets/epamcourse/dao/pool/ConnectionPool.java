@@ -51,9 +51,10 @@ public class ConnectionPool {
         }
     }
 
-    public static ConnectionPool getInstance() {
+    public static ConnectionPool getInstance() throws ConnectionPoolException {
         if (instance == null) {
             instance = new ConnectionPool();
+            instance.initPoolData();
         }
 
         return instance;
